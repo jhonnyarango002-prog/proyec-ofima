@@ -1,0 +1,171 @@
+.menu {
+    list-style: none;
+    display: flex;
+  justify-content: auto;
+    font-size: large;
+    gap: 195px;
+    background-color: oklab(35.74% -0.02093 -0.1963);
+    width: 1755px;
+
+}
+
+.menu li a {
+    color: #ffffff;
+}
+
+
+.cuadro {
+    height: 50px;
+    width: 50;
+    margin-left: 10;
+    margin-top: 10px;
+}
+
+.jpg {
+
+    margin-left: 100px;
+
+}
+
+
+
+.imagen {
+
+    margin-top: 0px;
+
+}
+
+.texto {
+    width: 700px;
+    margin-top: 70px;
+    font-size: 18px;
+   
+}
+
+.texto1 {
+    width: 700px;
+    margin-left: 950px;
+     font-size: 18px;
+     
+
+}
+
+.texto2 {
+    width: 700px;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.texto3 {
+
+    width: 700px;
+    font-size: 16px;
+
+}
+.texto4{
+    font-size: 18px;
+}
+
+footer {
+    background-color:oklab(29.454% -0.0177 -0.15882);
+    color: white;
+    padding: 1px 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+.footer-info {
+    flex: 1 1 250px;
+}
+
+.social-section {
+    flex: 1 1 200px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    filter: invert(100%);
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer-map {
+    flex: 1 1 200px;
+    min-width: 290px;
+    margin-top: 5px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.main {
+
+    flex: 1;
+}
+
+.footer-1 {
+
+    margin-top:70px;
+    width: auto;
+    padding: 0px;
+}
+.video{
+    width: 700px;
+    height: 300px;
+
+}
+
+.img1{
+margin-left: 0px;
+margin-top: -360px;
+
+}
+
+.img1 img{
+border-radius: 10px 10px;
+}
+.jpg1{
+    margin-left: 900px ;
+    margin-top: -330px;
+   
+}
+.jpg1 img{
+    border-radius: 10px 10px;
+}
+.img2{
+margin-left: 900px;
+margin-top:-150px ;
+
+}
+
+.img2 img{
+border-radius: 10px 10px;
+}
+.edit-carousel{
+    width: 900px;
+    margin-top: -30px;
+}
+.navbar a{
+    text-decoration: none;
+}
+.formula{
+    margin-left: 20px;
+}
