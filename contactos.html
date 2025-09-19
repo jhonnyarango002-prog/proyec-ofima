@@ -1,106 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declara el tipo de documento: HTML5 -->
+<html lang="Es"> <!-- Define el idioma principal del documento como Español -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservas</title>
+<head> <!-- Encabezado de la página -->
+  
+  <meta charset="UTF-8"> <!-- Establece la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página adaptable a móviles -->
+  <title>Reservas</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- Enlace al CSS de Bootstrap desde CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Enlace al JS de Bootstrap desde CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css"> <!-- Enlace a hoja de estilos personalizada -->
 </head>
 
-<body>
-  <main>
+<body> <!-- Cuerpo de la página -->
+  <main> <!-- Contenido principal -->
 
     <!--menú-->
-
-    <nav class="navbar">
-      <ul class="menu">
-        <img src="img/ofim.webp" width="150px" height="100px" alt="jpg">
-        <li> <a href="index.html">Pagina principal </a></li>
-        <li> <a href="contactos.html">contactos</a></li>
-        <li> <a href="quienes somos.html">Quienes somos </a></li>
-        <li> <a href="eventos.html">Dudas</a></li>
-        <li><a href="Tecnologias.html">Tecnologias</a></li>
+    <nav class="navbar"> <!-- Barra de navegación -->
+      <ul class="menu"> <!-- Lista de navegación -->
+        <img src="img/ofim.webp" width="150px" height="100px" alt="jpg"> <!-- Logo -->
+        <li> <a href="index.html">Pagina principal </a></li> <!-- Enlace a la página principal -->
+        <li> <a href="contactos.html">contactos</a></li> <!-- Enlace a contactos -->
+        <li> <a href="quienes somos.html">Quienes somos </a></li> <!-- Enlace a quienes somos -->
+        <li> <a href="eventos.html">Dudas</a></li> <!-- Enlace a dudas -->
+        <li><a href="Tecnologias.html">Tecnologias</a></li> <!-- Enlace a tecnologías -->
       </ul>
     </nav>
-    <h1></h1>
- <!--menú-->
+    <h1></h1> <!-- Encabezado vacío -->
+    <!--menú-->
 
   </main>
-<!--Formulario-->
-<div class="formula">
-<form>
-  <label>Nombre:</label><br>
-  <input type="text" name="nombre" required><br><br>
 
-  <label>Email:</label><br>
-  <input type="email" name="email" required><br><br>
+  <!--Formulario-->
+  <div class="formula"> <!-- Contenedor del formulario -->
+    <form> <!-- Inicio del formulario -->
+      <label>Nombre:</label><br> <!-- Etiqueta del campo nombre -->
+      <input type="text" name="nombre" required><br><br> <!-- Campo de texto para nombre -->
 
-  <label>Mensaje:</label><br>
-  <textarea name="mensaje" rows="5" required></textarea><br><br>
+      <label>Email:</label><br> <!-- Etiqueta del campo email -->
+      <input type="email" name="email" required><br><br> <!-- Campo de texto para correo electrónico -->
 
-  <button type="submit">Enviar</button>
-</form>
-</div>
-<!--Formulario-->
+      <label>Mensaje:</label><br> <!-- Etiqueta del campo mensaje -->
+      <textarea name="mensaje" rows="5" required></textarea><br><br> <!-- Área de texto para el mensaje -->
 
+      <button type="submit">Enviar</button> <!-- Botón para enviar formulario -->
+    </form>
+  </div>
+  <!--Formulario-->
 
- <!--footer-->
-  <div class="footer-1">
-    <footer class="footer">
-<!--información-->
-      <div class="footer-info">
+  <!--footer-->
+  <div class="footer-1"> <!-- Contenedor del pie de página -->
+    <footer class="footer"> <!-- Pie de página -->
+      <!--información-->
+      <div class="footer-info"> <!-- Información de contacto -->
 
-        <p><strong>Ubicado en:</strong> Centro Comercial Los Molinos</p>
+        <p><strong>Ubicado en:</strong> Centro Comercial Los Molinos</p> <!-- Ubicación -->
         <p><strong>Dirección:</strong> Torre Empresarial Los Molinos, Cl. 30A #82A – 26 Piso 19,<br>
-          Medellín, Belén, Medellín, Antioquia</p>
-        <p><strong>Teléfono:</strong> <a href="tel:3245792069">324 5792069</a></p>
-        <p><strong>Horario:</strong> <span class="open">Abierto</span> · Cierra a las 5:30 p.m.</p>
-
+          Medellín, Belén, Medellín, Antioquia</p> <!-- Dirección -->
+        <p><strong>Teléfono:</strong> <a href="tel:3245792069">324 5792069</a></p> <!-- Teléfono clickeable -->
+        <p><strong>Horario:</strong> <span class="open">Abierto</span> · Cierra a las 5:30 p.m.</p> <!-- Horario -->
       </div>
-<!--información-->
-      
+      <!--información-->
+
       <!--Enlaces de red-->
-      <div class="social-section">
-  
-        <div class="social-icons">
-          <a href="https://www.facebook.com/OfimaSAS" target="_blank" aria-label="Facebook">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-          </a>
-          <a href="https://www.instagram.com/ofima_sas/" target="_blank" aria-label="Instagram">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-          </a>
-          <a href="https://www.youtube.com/channel/UC..." target="_blank" aria-label="YouTube">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
-          </a>
-          <a href="https://www.linkedin.com/company/ofima-sas" target="_blank" aria-label="LinkedIn">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-          </a>
-          <a href="https://www.tiktok.com/@ofimasas" target="_blank" aria-label="TikTok">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-          </a>
-          <a href="https://wa.me/573245792069" target="_blank" aria-label="WhatsApp">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
-          </a>
-        </div>
-      </div>
-      <!--Enlaces de red-->
-      <!--Mapa-->
-      <div class="footer-map">
+      <div class="social-section"> <!-- Contenedor de sección redes sociales -->
+        <div class="social-icons"> <!-- Iconos sociales -->
 
-        <iframe src="https://www.google.com/maps?q=6.2442,-75.5812&output=embed" width="350" height="350"
-          style="border: 10px;;" allowfullscreen="10px" loading="lazy"></iframe>
-      </div>
-      <!--Mapa-->
-    </footer>
-   <!--footer-->
-
-</body>
-
-
-</html>
+          <a href="https://www.facebook.com/OfimaSAS" target="_blank" aria-label="Facebook"> <!-- Enlace Facebook -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"> <!-- Icono Facebook -->
+          </a>
+          <a href="https://www.instagram.com/ofima_sas/" target="_blank" aria-label="Instagram"> <!-- Enlace Instagram -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"> <!-- Icono Instagram -->
+          </a>
+          <a href="https://www.youtube.com/channel/UC..." target="_blank" aria-label="YouTube"> <!-- Enlace YouTube -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"> <!-- Icono YouTube -->
+          </a>
+          <a href="https://www.linkedin.com/company/ofima-sas" target="_blank" aria-label="LinkedIn"> <!-- Enlace LinkedIn -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> <!-- Icono LinkedIn -->
+          </a>
+          <a href="https://www.tiktok.com/@ofimasas" target="_blank" aria-label="TikTok"> <!-- Enlace TikTok -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"> <!-- Icono TikTok -->
+          </a>
+          <a href="https://wa.me/573245792069" target="_blank" aria-label="WhatsApp"> <!-- Enlace WhatsApp -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simp
