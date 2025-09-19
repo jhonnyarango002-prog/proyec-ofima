@@ -21,9 +21,9 @@ La web incluye secciones como misión, visión, objetivos, contacto, ubicación 
 
 Ejemplo de cómo correr el programa:
 
-1.Abre Visual Studio.
-2.Abrir carpeta del proyecto
-3.Click derecho en cualquier Html
-4.Copiar ruta (copy path)
-5.Abrir el navegador y pegar
-6.Y por git hub es con enlace (URL)
+1.Abre Visual Studio.<br>
+2.Abrir carpeta del proyecto<br>
+3.Click derecho en cualquier Html<br>
+4.Copiar ruta (copy path)<br>
+5.Abrir el navegador y pegar<br>
+6.Y por git hub es con enlace (URL)<br>
