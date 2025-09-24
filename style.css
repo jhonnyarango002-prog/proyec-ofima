@@ -1,4 +1,15 @@
-.menu {
+.container-fluid {
+    list-style: none;
+    display: flex;
+  justify-content: auto;
+    font-size: large;
+    gap: 195px;
+    background-color: oklab(35.74% -0.02093 -0.1963);
+    width: 1755px;
+  
+
+}
+.container {
     list-style: none;
     display: flex;
   justify-content: auto;
@@ -39,13 +50,14 @@
     width: 700px;
     margin-top: 70px;
     font-size: 18px;
-   
+   margin-top: 120px;
 }
 
 .texto1 {
     width: 700px;
     margin-left: 950px;
      font-size: 18px;
+     margin-top: 50px;
      
 
 }
@@ -57,12 +69,13 @@
 }
 
 .texto3 {
-
-    width: 700px;
+margin-top: 120px;
+    width: auto;
     font-size: 16px;
 
 }
 .texto4{
+    margin-top: 120px;
     font-size: 18px;
 }
 
@@ -74,12 +87,15 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    width: auto;
 }
 
 
 
 .footer-info {
     flex: 1 1 250px;
+    padding: 25px;
+    margin-top: 20px;
 }
 
 .social-section {
@@ -135,7 +151,7 @@ iframe {
 
 .img1{
 margin-left: 0px;
-margin-top: -360px;
+margin-top: -400px;
 
 }
 
@@ -144,7 +160,7 @@ border-radius: 10px 10px;
 }
 .jpg1{
     margin-left: 900px ;
-    margin-top: -330px;
+    margin-top: -370px;
    
 }
 .jpg1 img{
@@ -153,6 +169,7 @@ border-radius: 10px 10px;
 .img2{
 margin-left: 900px;
 margin-top:-150px ;
+margin-top: -160px;
 
 }
 
@@ -168,4 +185,16 @@ border-radius: 10px 10px;
 }
 .formula{
     margin-left: 20px;
+    margin-top: 120px;
+}
+.container{
+    margin-top: 120px;
+    background-color: blue;
+    box-align: justify;
+    box-shadow:  #22c0c363;
+background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(23, 117, 176, 1) 100%);
+}
+.jpg2{
+      box-shadow: 5px 5px 10px rgb(14, 70, 109);
+    border: 5px solid rgb(13, 0, 255);
 }

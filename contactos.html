@@ -12,9 +12,7 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <!-- Enlace al JS de Bootstrap desde CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+
 
   <link rel="stylesheet" href="style.css"> <!-- Enlace a hoja de estilos personalizada -->
 </head>
@@ -23,16 +21,50 @@
   <main> <!-- Contenido principal -->
 
     <!--menú-->
-    <nav class="navbar"> <!-- Barra de navegación -->
-      <ul class="menu"> <!-- Lista de navegación -->
-        <img src="img/ofim.webp" width="150px" height="100px" alt="jpg"> <!-- Logo -->
-        <li> <a href="index.html">Pagina principal </a></li> <!-- Enlace a la página principal -->
-        <li> <a href="contactos.html">contactos</a></li> <!-- Enlace a contactos -->
-        <li> <a href="quienes somos.html">Quienes somos </a></li> <!-- Enlace a quienes somos -->
-        <li> <a href="eventos.html">Dudas</a></li> <!-- Enlace a dudas -->
-        <li><a href="Tecnologias.html">Tecnologias</a></li> <!-- Enlace a tecnologías -->
-      </ul>
-    </nav>
+
+        <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <div class="jpg2">
+       <img src="img/ofim.webp" width="170px" height="100px" alt="png">
+       </div>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="eventos.html">Dudas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactos.html">Contactos</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Tecnologias.html">Tecnologias</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="Informe.html">Informe</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="quienes somos.html">Quienes Somos</a>
+          </li>
+
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
     <h1></h1> <!-- Encabezado vacío -->
     <!--menú-->
 
@@ -55,38 +87,55 @@
   </div>
   <!--Formulario-->
 
-  <!--footer-->
+ <!--footer-->
   <div class="footer-1"> <!-- Contenedor del pie de página -->
     <footer class="footer"> <!-- Pie de página -->
-      <!--información-->
+<!--información-->
       <div class="footer-info"> <!-- Información de contacto -->
 
-        <p><strong>Ubicado en:</strong> Centro Comercial Los Molinos</p> <!-- Ubicación -->
+        <p><strong>Ubicado en:</strong> Centro Comercial Los Molinos</p> <!-- Lugar de ubicación -->
         <p><strong>Dirección:</strong> Torre Empresarial Los Molinos, Cl. 30A #82A – 26 Piso 19,<br>
-          Medellín, Belén, Medellín, Antioquia</p> <!-- Dirección -->
-        <p><strong>Teléfono:</strong> <a href="tel:3245792069">324 5792069</a></p> <!-- Teléfono clickeable -->
-        <p><strong>Horario:</strong> <span class="open">Abierto</span> · Cierra a las 5:30 p.m.</p> <!-- Horario -->
+          Medellín, Belén, Medellín, Antioquia</p> <!-- Dirección física -->
+        <p><strong>Teléfono:</strong> <a href="tel:3245792069">324 5792069</a></p> <!-- Teléfono con enlace para llamar -->
+        <p><strong>Horario:</strong> <span class="open">Abierto</span> · Cierra a las 5:30 p.m.</p> <!-- Horario de atención -->
+
       </div>
-      <!--información-->
-
+<!--información-->
+      
       <!--Enlaces de red-->
-      <div class="social-section"> <!-- Contenedor de sección redes sociales -->
-        <div class="social-icons"> <!-- Iconos sociales -->
+      <div class="social-section"> <!-- Sección para las redes sociales -->
+  
+        <div class="social-icons"> <!-- Contenedor de iconos sociales -->
+          <a href="https://www.facebook.com/OfimaSAS" target="_blank" aria-label="Facebook"> <!-- Enlace a Facebook -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"> <!-- Icono de Facebook -->
+          </a>
+          <a href="https://www.instagram.com/ofima_sas/" target="_blank" aria-label="Instagram"> <!-- Enlace a Instagram -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"> <!-- Icono de Instagram -->
+          </a>
+          <a href="https://www.youtube.com/channel/UC..." target="_blank" aria-label="YouTube"> <!-- Enlace a YouTube -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"> <!-- Icono de YouTube -->
+          </a>
+          <a href="https://www.linkedin.com/company/ofima-sas" target="_blank" aria-label="LinkedIn"> <!-- Enlace a LinkedIn -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> <!-- Icono de LinkedIn -->
+          </a>
+          <a href="https://www.tiktok.com/@ofimasas" target="_blank" aria-label="TikTok"> <!-- Enlace a TikTok -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"> <!-- Icono de TikTok -->
+          </a>
+          <a href="https://wa.me/573245792069" target="_blank" aria-label="WhatsApp"> <!-- Enlace a WhatsApp -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"> <!-- Icono de WhatsApp -->
+          </a>
+        </div>
+      </div>
+      <!--Enlaces de red-->
+      <!--Mapa-->
+      <div class="footer-map"> <!-- Contenedor del mapa -->
 
-          <a href="https://www.facebook.com/OfimaSAS" target="_blank" aria-label="Facebook"> <!-- Enlace Facebook -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"> <!-- Icono Facebook -->
-          </a>
-          <a href="https://www.instagram.com/ofima_sas/" target="_blank" aria-label="Instagram"> <!-- Enlace Instagram -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"> <!-- Icono Instagram -->
-          </a>
-          <a href="https://www.youtube.com/channel/UC..." target="_blank" aria-label="YouTube"> <!-- Enlace YouTube -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"> <!-- Icono YouTube -->
-          </a>
-          <a href="https://www.linkedin.com/company/ofima-sas" target="_blank" aria-label="LinkedIn"> <!-- Enlace LinkedIn -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> <!-- Icono LinkedIn -->
-          </a>
-          <a href="https://www.tiktok.com/@ofimasas" target="_blank" aria-label="TikTok"> <!-- Enlace TikTok -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"> <!-- Icono TikTok -->
-          </a>
-          <a href="https://wa.me/573245792069" target="_blank" aria-label="WhatsApp"> <!-- Enlace WhatsApp -->
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simp
+        <iframe src="https://www.google.com/maps?q=6.2442,-75.5812&output=embed" width="350" height="350"
+          style="border: 10px;;" allowfullscreen="10px" loading="lazy"></iframe> <!-- Mapa embebido de Google Maps -->
+      </div>
+      <!--Mapa-->
+    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+   <!--footer-->
