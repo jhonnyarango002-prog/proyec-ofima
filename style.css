@@ -114,6 +114,7 @@ footer {
     height: 28px;
     filter: invert(100%);
     transition: transform 0.3s;
+    margin-top: 35px;
 }
 
 .social-icons img:hover {
