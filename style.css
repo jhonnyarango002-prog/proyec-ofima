@@ -5,7 +5,9 @@
     font-size: large;
     gap: 195px;
     background-color: oklab(35.74% -0.02093 -0.1963);
-    width: 1755px;
+    
+    margin-top:-10px;
+
   
 
 }
@@ -511,4 +513,7 @@ left: 350px;
   100% {
     transform: rotateX(360deg) rotateY(360deg);
   }
+}
+.flex-column{
+  margin-top: 100px;
 }
