@@ -1,67 +1,60 @@
+/* Estilo para contenedor principal con diseño de flexbox y separación */
 .container-fluid {
-    list-style: none;
-    display: flex;
-  justify-content: auto;
-    font-size: large;
-    gap: 195px;
-    background-color: oklab(35.74% -0.02093 -0.1963);
-    
-    margin-top:-10px;
-
-  
-
+    list-style: none; /* Elimina viñetas si se usa con listas */
+    display: flex; /* Establece diseño flexible */
+    justify-content: auto; /* Valor no válido, probablemente quisiste usar "space-between", "center", etc. */
+    font-size: large; /* Tamaño de fuente grande */
+    gap: 195px; /* Espacio entre elementos hijos */
+    background-color: oklab(35.74% -0.02093 -0.1963); /* Color de fondo con modelo oklab */
+    margin-top: -10px; /* Ajusta margen superior hacia arriba */
 }
+
+/* Otro contenedor con propiedades similares */
 .container {
     list-style: none;
     display: flex;
-  justify-content: auto;
+    justify-content: auto;
     font-size: large;
     gap: 195px;
     background-color: oklab(35.74% -0.02093 -0.1963);
-    width: 1755px;
-
+    width: 1755px; /* Ancho fijo */
 }
 
+/* Enlaces dentro de lista de menú */
 .menu li a {
-    color: #ffffff;
+    color: #ffffff; /* Texto blanco */
 }
 
-
+/* Cuadro cuadrado con margen */
 .cuadro {
     height: 50px;
-    width: 50;
-    margin-left: 10;
+    width: 50; /* Le falta unidad, debería ser "50px" */
+    margin-left: 10; /* Falta unidad también: "10px" */
     margin-top: 10px;
 }
 
+/* Margen izquierdo grande para .jpg */
 .jpg {
-
     margin-left: 100px;
-
 }
 
-
-
+/* Ajuste superior para imagen */
 .imagen {
-
     margin-top: 0px;
-
 }
 
+/* Estilos para texto */
 .texto {
     width: 700px;
-    margin-top: 70px;
+    margin-top: 120px; /* Hay una propiedad repetida antes */
     font-size: 18px;
-   margin-top: 120px;
 }
 
 .texto1 {
     width: 700px;
     margin-left: 950px;
-     font-size: 18px;
-     margin-top: 50px;
-     
-
+    font-size: 18px;
+    margin-top: 50px;
 }
 
 .texto2 {
@@ -71,18 +64,19 @@
 }
 
 .texto3 {
-margin-top: 120px;
+    margin-top: 120px;
     width: auto;
     font-size: 16px;
-
 }
-.texto4{
+
+.texto4 {
     margin-top: 120px;
     font-size: 18px;
 }
 
+/* Estilo del pie de página */
 footer {
-    background-color:oklab(29.454% -0.0177 -0.15882);
+    background-color: oklab(29.454% -0.0177 -0.15882);
     color: white;
     padding: 1px 20px;
     font-family: 'Arial', sans-serif;
@@ -92,18 +86,19 @@ footer {
     width: auto;
 }
 
-
-
+/* Información dentro del footer */
 .footer-info {
-    flex: 1 1 250px;
+    flex: 1 1 250px; /* Flexible con ancho mínimo */
     padding: 25px;
     margin-top: 20px;
 }
 
+/* Sección social en el footer */
 .social-section {
     flex: 1 1 200px;
 }
 
+/* Contenedor para íconos sociales */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -114,406 +109,404 @@ footer {
 .social-icons img {
     width: 28px;
     height: 28px;
-    filter: invert(100%);
+    filter: invert(100%); /* Convierte blanco a negro y viceversa */
     transition: transform 0.3s;
     margin-top: 35px;
 }
 
 .social-icons img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
 }
 
+/* Mapa en footer */
 .footer-map {
     flex: 1 1 200px;
     min-width: 290px;
     margin-top: 5px;
 }
 
+/* Estilo general para iframe (mapas o videos) */
 iframe {
     width: 100%;
     height: 100%;
     border-radius: 8px;
 }
 
+/* Clase para contenido principal */
 .main {
-
     flex: 1;
 }
 
+/* Footer extra con padding 0 */
 .footer-1 {
-
-    margin-top:70px;
+    margin-top: 70px;
     width: auto;
     padding: 0px;
 }
-.video{
+
+/* Video con tamaño fijo */
+.video {
     width: 700px;
     height: 300px;
-
 }
 
-.img1{
-margin-left: 0px;
-margin-top: -400px;
-
+/* Imagen posicionada */
+.img1 {
+    margin-left: 0px;
+    margin-top: -400px;
 }
 
-.img1 img{
-border-radius: 10px 10px;
+.img1 img {
+    border-radius: 10px 10px; /* Bordes redondeados arriba */
 }
-.jpg1{
-    margin-left: 900px ;
+
+.jpg1 {
+    margin-left: 900px;
     margin-top: -370px;
-   
 }
-.jpg1 img{
+
+.jpg1 img {
     border-radius: 10px 10px;
 }
-.img2{
-margin-left: 900px;
-margin-top:-150px ;
-margin-top: -160px;
 
+.img2 {
+    margin-left: 900px;
+    margin-top: -160px;
 }
 
-.img2 img{
-border-radius: 10px 10px;
+.img2 img {
+    border-radius: 10px 10px;
 }
-.edit-carousel{
+
+/* Carrusel modificado */
+.edit-carousel {
     width: 900px;
     margin-top: -30px;
 }
-.navbar a{
-    text-decoration: none;
+
+/* Enlaces del navbar */
+.navbar a {
+    text-decoration: none; /* Quita subrayado */
 }
-.formula{
+
+/* Contenedor para fórmula o formulario */
+.formula {
     margin-left: 20px;
     margin-top: 120px;
 }
-.container{
+
+/* Repetido: estilo para .container, sobrescribe lo anterior */
+.container {
     margin-top: 120px;
     background-color: blue;
-    box-align: justify;
-    box-shadow:  #22c0c363;
-background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(23, 117, 176, 1) 100%);
+    box-align: justify; /* No válido: quizás quisiste "text-align: justify" */
+    box-shadow: #22c0c363; /* No válido: falta propiedad como "box-shadow: 0 4px 8px #22c0c363;" */
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(23, 117, 176, 1) 100%);
 }
 
-/* From Uiverse.io by micaelgomestavares */ 
+/* ---- FORMULARIO ESTILO UIVERSE.IO ---- */
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 30px;
-  width: 350px;
-  border-radius: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 350px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 ::placeholder {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: inherit; /* Usa misma fuente que el formulario */
 }
 
 .form button {
-  align-self: flex-end;
+    align-self: flex-end; /* Alinea el botón al final */
 }
 
 .flex-column > label {
-  color: #000000;
-  font-weight: 600;
+    color: #000000;
+    font-weight: 600;
 }
 
+/* Caja de entrada del formulario */
 .inputForm {
-  border: 1.5px solid #000000;
-  border-radius: 10px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  transition: 0.2s ease-in-out;
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
 }
 
 .input {
-  margin-left: 10px;
-  border-radius: 10px;
-  border: none;
-  width: 85%;
-  height: 100%;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 85%;
+    height: 100%;
 }
 
 .input:focus {
-  outline: none;
+    outline: none;
 }
 
 .inputForm:focus-within {
-  border: 1.5px solid #2d79f3;
+    border: 1.5px solid #2d79f3;
 }
 
 .flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .flex-row > div > label {
-  font-size: 14px;
-  color: rgb(223, 169, 169);
-  font-weight: 400;
+    font-size: 14px;
+    color: rgb(223, 169, 169);
+    font-weight: 400;
 }
 
 .span {
-  font-size: 14px;
-  margin-left: 5px;
-  color: #2d79f3;
-  font-weight: 500;
-  cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
 }
 
+/* Botón para enviar formulario */
 .button-submit {
-  margin: 20px 0 10px 0;
-  background-color: #151717;
-  border: none;
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 10px;
-  height: 50px;
-  width: 100%;
-  cursor: pointer;
+    margin: 20px 0 10px 0;
+    background-color: #151717;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
 }
 
 .button-submit:hover {
-  background-color: #252727;
+    background-color: #252727;
 }
 
 .p {
-  text-align: center;
-  color: black;
-  font-size: 14px;
-  margin: 5px 0;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 5px 0;
 }
 
+/* Botón alternativo */
 .btn {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  gap: 10px;
-  border: 1px solid #000000;
-  background-color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #000000;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 .btn:hover {
-  border: 1px solid #2d79f3;
-  ;
+    border: 1px solid #2d79f3;
 }
 
-
-
-
-
-
-
-
-
-
-    /* From Uiverse.io by Daniel1227k */ 
+/* ---- TARJETA CON EFECTO HOVER ---- */
 .card {
-  position: relative;
-  width: 1150px;
-  height: 104px;
-  background: #f00;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-margin-top: 30px;
-left: 350px;
+    position: relative;
+    width: 1150px;
+    height: 104px;
+    background: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    left: 350px;
 }
 
 .card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(315deg,#03a9f4,#ff0058);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
 }
 
 .card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(315deg,#03a9f4,#ff0058);
-  filter: blur(30px);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+    filter: blur(30px); /* Agrega brillo */
 }
 
 .card b {
-  position: absolute;
-  inset: 6px;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
 .card img {
-  position: absolute;
-  z-index: 3;
-  scale: 0.8;
-  opacity: 0.25;
-  transition: 0.5s;
+    position: absolute;
+    z-index: 3;
+    scale: 0.8;
+    opacity: 0.25;
+    transition: 0.5s;
 }
 
 .card:hover img {
-  scale: 0.5;
-  opacity: 0.9;
-  transform: translateY(-70px);
+    scale: 0.5;
+    opacity: 0.9;
+    transform: translateY(-70px);
 }
 
 .card .content {
-  position: absolute;
-  z-index: 3;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: scale(0);
-  transition: 0.5s;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
 }
 
 .card:hover .content {
-  transform: scale(1);
-  bottom: auto;
+    transform: scale(1);
+    bottom: auto;
 }
 
 .content .title {
-  position: relative;
-  color: #fff;
-  font-weight: 500;
-  line-height: 1em;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .content .title span {
-  font-weight: 300;
-  font-size: 0.70em;
+    font-weight: 300;
+    font-size: 0.70em;
 }
 
 .content .sci {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
 }
 
 .sci li {
-  list-style: none;
+    list-style: none;
 }
 
 .sci li .fa-brands {
-  width: 14px;
+    width: 14px;
 }
 
 .sci li .fa-facebook {
-  width: 10px;
+    width: 10px;
 }
 
 .sci li a {
-  position: relative;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(0, 0, 0, 0.2);
-  fill: currentColor;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: 0.5s;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: 0.5s;
 }
 
 .sci li a:hover {
-  fill: currentColor;
-  color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
-
-
-
-/* From Uiverse.io by lukepadiachy */ 
+/* ---- LOADER ANIMADO CUBO RUBIK ---- */
 .my-loader {
-  width: 200px;
-  height: 200px;
-  perspective: 1000px;
-  margin: 100px auto;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 100px auto;
 }
 
 .rubiks-cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: my-rotateCube 5s infinite linear;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: my-rotateCube 5s infinite linear;
 }
 
 .my-loader .face {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
 
 .my-loader .face.front {
-  transform: translateZ(100px);
+    transform: translateZ(100px);
 }
 .my-loader .face.back {
-  transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(100px);
 }
 .my-loader .face.left {
-  transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(100px);
 }
 .my-loader .face.right {
-  transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) translateZ(100px);
 }
 .my-loader .face.top {
-  transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(100px);
 }
 .my-loader .face.bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(100px);
 }
 
 .my-loader .cube {
-  width: calc(100% / 3);
-  height: calc(100% / 3);
-  box-sizing: border-box;
-  border: 1px solid #000;
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    box-sizing: border-box;
+    border: 1px solid #000;
 }
 
+/* Animación de rotación 3D */
 @keyframes my-rotateCube {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
 }
-.flex-column{
-  margin-top: 100px;
+
+/* Ajuste para columna de inputs */
+.flex-column {
+    margin-top: 100px;
 }
