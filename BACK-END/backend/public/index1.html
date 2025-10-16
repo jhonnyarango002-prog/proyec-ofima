@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Empleados - Ofima</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form.css">
+  <style>
+    /* estilos del selector de estado */
+    .estado-selector {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 2px solid #ddd;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .estado-selector:hover { transform: scale(1.05); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .estado-activo { background: #d4edda; color: #155724; border-color: #28a745; }
+    .estado-inactivo { background: #f8d7da; color: #721c24; border-color: #dc3545; }
+    .estado-vacaciones { background: #fff3cd; color: #856404; border-color: #ffc107; }
+    .estado-licencia { background: #d1ecf1; color: #0c5460; border-color: #17a2b8; }
+    .loading-estado { opacity: 0.5; pointer-events: none; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    th { background: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <img src="img/ofim.webp" width="170" height="100" alt="Logo Ofima">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Menú</h5>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="quienes somos.html">Quienes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="index1.html">Contactos</a></li>
+            <li class="nav-item"><a class="nav-link" href="Tecnologias.html">Tecnologías</a></li>
+            <li class="nav-item"><a class="nav-link" href="Industrias.html">Industrias</a></li>
+            <li class="nav-item"><a class="nav-link" href="Dudas.html">Dudas</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BOTONES DE MENÚ -->
+  <div class="menu" style="margin-top:120px; text-align:center;">
+    <button onclick="mostrarSeccion('crear')">➕ Crear empleado</button>
+    <button onclick="mostrarSeccion('consultar')">📋 Consultar empleados</button>
+    <button onclick="mostrarSeccion('actualizar')">✏️ Actualizar empleado</button>
+    <button onclick="mostrarSeccion('eliminar')">🗑️ Eliminar empleado</button>
+  </div>
+
+  <!-- SECCIONES -->
+  <div id="crear" class="seccion">
+    <h2>➕ Crear empleado</h2>
+    <div id="mensajeCrear"></div>
+    <div class="form-group"><label>Nombre completo *</label><input type="text" id="nombre"></div>
+    <div class="form-group"><label>Cédula *</label><input type="text" id="cedula"></div>
+    <div class="form-group"><label>Área</label><input type="text" id="area"></div>
+    <div class="form-group"><label>Salario</label><input type="number" id="salario"></div>
+    <div class="form-group">
+      <label>Cargo *</label>
+      <select id="cargo">
+        <option value="">Seleccione</option>
+        <option>Administrador</option><option>Supervisor</option>
+        <option>Analista</option><option>Desarrollador</option><option>Practicante</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Roles</label>
+      <select id="roles" multiple>
+        <option>Líder</option><option>Operativo</option><option>Soporte</option><option>Trainee</option>
+      </select>
+    </div>
+    <button onclick="crearEmpleado()">💾 Guardar empleado</button>
+  </div>
+
+  <div id="consultar" class="seccion" style="display:none;">
+    <h2>📋 Lista de empleados</h2>
+    <div id="listaEmpleados"></div>
+    <button onclick="exportarExcel()">📊 Exportar a Excel</button>
+  </div>
+
+  <div id="actualizar" class="seccion" style="display:none;">
+    <h2>✏️ Actualizar empleado</h2>
+    <div id="mensajeActualizar"></div>
+    <input type="number" id="idActualizar" placeholder="ID empleado *">
+    <input type="text" id="nuevoNombre" placeholder="Nuevo nombre">
+    <select id="nuevoCargo"><option value="">No cambiar</option><option>Administrador</option><option>Supervisor</option><option>Analista</option><option>Desarrollador</option><option>Practicante</option></select>
+    <input type="text" id="nuevaArea" placeholder="Nueva área">
+    <input type="number" id="nuevoSalario" placeholder="Nuevo salario">
+    <select id="nuevosRoles" multiple><option>Líder</option><option>Operativo</option><option>Soporte</option><option>Trainee</option></select>
+    <button onclick="actualizarEmpleado()">🔄 Actualizar</button>
+  </div>
+
+  <div id="eliminar" class="seccion" style="display:none;">
+    <h2>🗑️ Eliminar empleado</h2>
+    <div id="mensajeEliminar"></div>
+    <input type="number" id="idEliminar" placeholder="ID empleado *">
+    <button onclick="eliminarEmpleado()" style="background:red;color:white;">❌ Eliminar</button>
+  </div>
+
+  <!-- SCRIPT FUNCIONAL -->
+  <script>
+    const API_URL = 'http://localhost:3000/api/empleados';
+    let empleados = [];
+
+    function mostrarSeccion(id){
+      document.querySelectorAll('.seccion').forEach(s=>s.style.display='none');
+      document.getElementById(id).style.display='block';
+      if(id==='consultar') consultarEmpleados();
+    }
+
+    function mostrarMensaje(id,msg,tipo){
+      const el=document.getElementById(id);
+      el.innerHTML=`<div class="${tipo}">${msg}</div>`;
+      setTimeout(()=>el.innerHTML='',4000);
+    }
+
+    async function crearEmpleado(){
+      const nombre=document.getElementById("nombre").value.trim();
+      const cedula=document.getElementById("cedula").value.trim();
+      const area=document.getElementById("area").value.trim();
+      const salario=parseFloat(document.getElementById("salario").value);
+      const cargo=document.getElementById("cargo").value;
+      const roles=Array.from(document.getElementById("roles").selectedOptions).map(o=>o.value);
+      if(!nombre||!cedula||!cargo){mostrarMensaje('mensajeCrear','⚠️ Completa los campos obligatorios.','error');return;}
+      const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre,cedula,area,salario,cargo,roles})});
+      const data=await res.json();
+      data.success?mostrarMensaje('mensajeCrear','✅ Creado.','success'):mostrarMensaje('mensajeCrear','❌ '+data.message,'error');
+    }
+
+    async function consultarEmpleados(){
+      const res=await fetch(API_URL); const data=await res.json();
+      if(!data.success){document.getElementById('listaEmpleados').innerHTML='❌ Error';return;}
+      empleados=data.data;
+      let tabla=`<table><tr><th>ID</th><th>Nombre</th><th>Cédula</th><th>Área</th><th>Salario</th><th>Cargo</th><th>Roles</th><th>Estado</th></tr>`;
+      data.data.forEach(e=>{
+        const sal=e.salario?Number(e.salario).toLocaleString('es-CO',{style:'currency',currency:'COP'}):'N/A';
+        const clase=e.estado==='Activo'?'estado-activo':e.estado==='Inactivo'?'estado-inactivo':e.estado==='Vacaciones'?'estado-vacaciones':'estado-licencia';
+        tabla+=`<tr><td>${e.id}</td><td>${e.nombre}</td><td>${e.cedula}</td><td>${e.area||''}</td><td>${sal}</td><td>${e.cargo}</td><td>${e.roles?.join(', ')}</td>
+        <td><select class="estado-selector ${clase}" data-estado-anterior="${e.estado}" onchange="cambiarEstado(${e.id},this.value,this)">
+        <option ${e.estado==='Activo'?'selected':''}>Activo</option>
+        <option ${e.estado==='Inactivo'?'selected':''}>Inactivo</option>
+        <option ${e.estado==='Vacaciones'?'selected':''}>Vacaciones</option>
+        <option ${e.estado==='Licencia'?'selected':''}>Licencia</option></select></td></tr>`;
+      });
+      tabla+='</table>'; document.getElementById('listaEmpleados').innerHTML=tabla;
+    }
+
+    async function cambiarEstado(id,nuevo,sel){
+      const prev=sel.dataset.estadoAnterior; sel.disabled=true; sel.classList.add('loading-estado');
+      try{
+        const r=await fetch(`${API_URL}/${id}/estado`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({estado:nuevo})});
+        const d=await r.json();
+        if(d.success){sel.dataset.estadoAnterior=nuevo;mostrarSeccion('consultar');}
+        else{sel.value=prev;alert('Error');}
+      }catch(e){sel.value=prev;} sel.disabled=false; sel.classList.remove('loading-estado');
+    }
+
+    async function actualizarEmpleado(){
+      const id=parseInt(idActualizar.value); if(!id){mostrarMensaje('mensajeActualizar','Ingresa un ID','error');return;}
+      const obj={}; if(nuevoNombre.value)obj.nombre=nuevoNombre.value;
+      if(nuevoCargo.value)obj.cargo=nuevoCargo.value;
+      if(nuevaArea.value)obj.area=nuevaArea.value;
+      if(nuevoSalario.value)obj.salario=parseFloat(nuevoSalario.value);
+      const roles=Array.from(nuevosRoles.selectedOptions).map(o=>o.value); if(roles.length)obj.roles=roles;
+      const r=await fetch(`${API_URL}/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(obj)});
+      const d=await r.json(); mostrarMensaje('mensajeActualizar',d.success?'✅ Actualizado':'❌ '+d.message,d.success?'success':'error');
+    }
+
+    async function eliminarEmpleado(){
+      const id=parseInt(idEliminar.value); if(!id)return mostrarMensaje('mensajeEliminar','Ingresa un ID','error');
+      if(!confirm('¿Seguro?'))return;
+      const r=await fetch(`${API_URL}/${id}`,{method:'DELETE'}); const d=await r.json();
+      mostrarMensaje('mensajeEliminar',d.success?'✅ Eliminado':'❌ '+d.message,d.success?'success':'error');
+    }
+
+    function exportarExcel(){
+      if(!empleados.length)return alert('No hay empleados');
+      const hoja=XLSX.utils.json_to_sheet(empleados);
+      const libro=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(libro,hoja,"Empleados");
+      XLSX.writeFile(libro,"empleados.xlsx");
+    }
+
+    window.onload=()=>mostrarSeccion('consultar');
+  </script>
+
+  <!--footer-->
+  <div class="footer-1"> <!-- Contenedor del pie de página -->
+    <footer class="footer"> <!-- Pie de página -->
+<!--información-->
+      <div class="footer-info"> <!-- Información de contacto -->
+
+        <p><strong>Ubicado en:</strong> Centro Comercial Los Molinos</p> <!-- Lugar de ubicación -->
+        <p><strong>Dirección:</strong> Torre Empresarial Los Molinos, Cl. 30A #82A – 26 Piso 19,<br>
+          Medellín, Belén, Medellín, Antioquia</p> <!-- Dirección física -->
+        <p><strong>Teléfono:</strong> <a href="tel:3245792069">324 5792069</a></p> <!-- Teléfono con enlace para llamar -->
+        <p><strong>Horario:</strong> <span class="open">Abierto</span> · Cierra a las 5:30 p.m.</p> <!-- Horario de atención -->
+
+      </div>
+<!--información-->
+      
+      <!--Enlaces de red-->
+      <div class="social-section"> <!-- Sección para las redes sociales -->
+  
+        <div class="social-icons"> <!-- Contenedor de iconos sociales -->
+          <a href="https://www.facebook.com/OfimaSAS" target="_blank" aria-label="Facebook"> <!-- Enlace a Facebook -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook"> <!-- Icono de Facebook -->
+          </a>
+          <a href="https://www.instagram.com/ofima_sas/" target="_blank" aria-label="Instagram"> <!-- Enlace a Instagram -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"> <!-- Icono de Instagram -->
+          </a>
+          <a href="https://www.youtube.com/channel/UC..." target="_blank" aria-label="YouTube"> <!-- Enlace a YouTube -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"> <!-- Icono de YouTube -->
+          </a>
+          <a href="https://www.linkedin.com/company/ofima-sas" target="_blank" aria-label="LinkedIn"> <!-- Enlace a LinkedIn -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn"> <!-- Icono de LinkedIn -->
+          </a>
+          <a href="https://www.tiktok.com/@ofimasas" target="_blank" aria-label="TikTok"> <!-- Enlace a TikTok -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"> <!-- Icono de TikTok -->
+          </a>
+          <a href="https://wa.me/573245792069" target="_blank" aria-label="WhatsApp"> <!-- Enlace a WhatsApp -->
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"> <!-- Icono de WhatsApp -->
+          </a>
+        </div>
+      </div>
+      <!--Enlaces de red-->
+      <!--Mapa-->
+      <div class="footer-map"> <!-- Contenedor del mapa -->
+
+        <iframe src="https://www.google.com/maps?q=6.2442,-75.5812&output=embed" width="350" height="350"
+          style="border: 10px;;" allowfullscreen="10px" loading="lazy"></iframe> <!-- Mapa embebido de Google Maps -->
+      </div>
+      <!--Mapa-->
+    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+   <!--footer-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
