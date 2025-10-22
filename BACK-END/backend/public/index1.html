@@ -41,9 +41,10 @@
       </button>
 
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">Menú</h5>
-        </div>
+  
+              <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+      </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
@@ -90,6 +91,7 @@
     </div>
     <button onclick="crearEmpleado()">💾 Guardar empleado</button>
   </div>
+  
 
   <div id="consultar" class="seccion" style="display:none;">
     <h2>📋 Lista de empleados</h2>
@@ -107,8 +109,7 @@
     <input type="number" id="nuevoSalario" placeholder="Nuevo salario">
     <select id="nuevosRoles" multiple><option>Líder</option><option>Operativo</option><option>Soporte</option><option>Trainee</option></select>
     <button onclick="actualizarEmpleado()">🔄 Actualizar</button>
-  </div>
-
+</div>
   <div id="eliminar" class="seccion" style="display:none;">
     <h2>🗑️ Eliminar empleado</h2>
     <div id="mensajeEliminar"></div>
@@ -157,7 +158,6 @@
         tabla+=`<tr><td>${e.id}</td><td>${e.nombre}</td><td>${e.cedula}</td><td>${e.area||''}</td><td>${sal}</td><td>${e.cargo}</td><td>${e.roles?.join(', ')}</td>
         <td><select class="estado-selector ${clase}" data-estado-anterior="${e.estado}" onchange="cambiarEstado(${e.id},this.value,this)">
         <option ${e.estado==='Activo'?'selected':''}>Activo</option>
-        <option ${e.estado==='Inactivo'?'selected':''}>Inactivo</option>
         <option ${e.estado==='Vacaciones'?'selected':''}>Vacaciones</option>
         <option ${e.estado==='Licencia'?'selected':''}>Licencia</option></select></td></tr>`;
       });

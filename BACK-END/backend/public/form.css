@@ -92,7 +92,7 @@ h2 {
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #dcdde6;
 }
 
 button:not(.menu button):not(.btn-exportar) {
